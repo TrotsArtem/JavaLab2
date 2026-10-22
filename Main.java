@@ -8,10 +8,10 @@ public class Main {
         int choice;
 
         do {
-            System.out.println("\n=== ГОЛОВНЕ МЕНЮ ===");
-            System.out.println("1. Завдання 1: Робота з класом Angle (Кут)");
-            System.out.println("2. Завдання 2: Робота з класом Vector3D (Вектор)");
-            System.out.println("3. Завдання 3: Пошук дня місяця і тижня (GregorianCalendar)");
+            System.out.println("\nГОЛОВНЕ МЕНЮ");
+            System.out.println("1. Завдання 1");
+            System.out.println("2. Завдання 2");
+            System.out.println("3. Завдання 3");
             System.out.println("0. Вихід");
             System.out.print("Оберіть опцію: ");
             
@@ -28,10 +28,10 @@ public class Main {
                     YearCalendar.runDemo(scanner);
                     break;
                 case 0:
-                    System.out.println("Вихід з програми. До побачення!");
+                    System.out.println("Вихід з програми.");
                     break;
                 default:
-                    System.out.println("Невірний вибір. Спробуйте ще раз.");
+                    System.out.println("Невірний вибір.");
             }
         } while (choice != 0);
 
@@ -96,7 +96,6 @@ class Angle implements Comparable<Angle> {
     }
 
     public static void runDemo(Scanner scanner) {
-        System.out.println("\n--- Демонстрація класу Angle ---");
         System.out.print("Введіть градуси першого кута: ");
         int deg1 = scanner.nextInt();
         System.out.print("Введіть хвилини першого кута: ");
@@ -170,7 +169,7 @@ class Vector3D {
     }
 
     public static void runDemo(Scanner scanner) {
-        System.out.println("\n--- Демонстрація класу Vector3D ---");
+        System.out.println("\nДемонстрація класу Vector3D");
         System.out.println("Введіть координати першого вектора (x y z): ");
         double x1 = scanner.nextDouble();
         double y1 = scanner.nextDouble();
@@ -186,7 +185,7 @@ class Vector3D {
         System.out.println("Вектор 1: " + v1);
         System.out.println("Модуль Вектора 1: " + v1.magnitude());
 
-        System.out.print("Введіть число (скаляр) для множення першого вектора: ");
+        System.out.print("Введіть число для множення першого вектора: ");
         double scalar = scanner.nextDouble();
         System.out.println("Результат множення на скаляр: " + v1.multiply(scalar));
 
@@ -226,10 +225,9 @@ class YearCalendar {
     }
 
     public static void runDemo(Scanner scanner) {
-        System.out.println("\n--- Демонстрація класу YearCalendar (GregorianCalendar) ---");
-        System.out.print("Введіть рік (наприклад, 2002): ");
+        System.out.print("Введіть рік: ");
         int year = scanner.nextInt();
-        System.out.print("Введіть порядковий номер дня в році (наприклад, 32): ");
+        System.out.print("Введіть порядковий номер дня в році: ");
         int dayOfYear = scanner.nextInt();
 
         printDateByDayOfYear(year, dayOfYear);

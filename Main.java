@@ -48,16 +48,16 @@ class Angle implements Comparable<Angle> {
     }
 
     public void setAngle(int degrees, int minutes) {
-        int totalMinutes = degrees * 60 + minutes;
+        int totalMin = degrees * 60 + minutes;
         int totalMinInCircle = 360 * 60;
         
-        totalMinutes = totalMinutes % totalMinInCircle;
-        if (totalMinutes < 0) {
-            totalMinutes += totalMinInCircle;
+        totalMin = totalMin % totalMinInCircle;
+        if (totalMin < 0) {
+            totalMin += totalMinInCircle;
         }
         
-        this.degrees = totalMinutes / 60;
-        this.minutes = totalMinutes % 60;
+        this.degrees = totalMin / 60;
+        this.minutes = totalMin % 60;
     }
 
     public void normalize() {
@@ -65,8 +65,8 @@ class Angle implements Comparable<Angle> {
     }
 
     public double toRadians() {
-        double totalDegrees = degrees + (double) minutes / 60.0;
-        return Math.toRadians(totalDegrees);
+        double totalDeg = degrees + (double) minutes / 60.0;
+        return Math.toRadians(totalDeg);
     }
 
     public void increase(int deg, int min) {
@@ -83,14 +83,12 @@ class Angle implements Comparable<Angle> {
         return Math.sin(toRadians());
     }
 
-    @Override
     public int compareTo(Angle other) {
         int thisTotal = this.degrees * 60 + this.minutes;
         int otherTotal = other.degrees * 60 + other.minutes;
         return Integer.compare(thisTotal, otherTotal);
     }
 
-    @Override
     public String toString() {
         return degrees + "° " + minutes + "'";
     }
